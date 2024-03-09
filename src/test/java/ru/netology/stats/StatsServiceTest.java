@@ -32,4 +32,31 @@ public class StatsServiceTest {
         long actualGeneralSum = service.generalSumSales(sum);
         Assertions.assertEquals(expectedGeneralSum, actualGeneralSum);
     }
+
+    @Test
+    public void testAverageSumSum() {
+        StatsService service = new StatsService();
+        long[] sum = {20, 40, 80, 166, 1, 23, 55, 33, 45, 90, 56, 54};
+        double expectedAverageSum = 55.25;
+        double actualAverageSum = service.averageSum(sum);
+        Assertions.assertEquals(expectedAverageSum, actualAverageSum);
+    }
+
+    @Test
+    public void testMonthBelowAverege() {
+        StatsService service = new StatsService();
+        long[] sum = {20, 40, 80, 166, 1, 23, 55, 33, 45, 90, 56, 54};
+        double expectedMonthBelowAverege = 8;
+        double actualMonthBelowAverege = service.monthBelowAverege(sum);
+        Assertions.assertEquals(expectedMonthBelowAverege, actualMonthBelowAverege);
+    }
+
+    @Test
+    public void testMonthAboveAverege() {
+        StatsService service = new StatsService();
+        long[] sum = {20, 40, 80, 166, 1, 23, 55, 33, 45, 90, 56, 54};
+        double expectedMonthAboveAverege = 4;
+        double actualMonthAboveAverege = service.monthAboveAverege(sum);
+        Assertions.assertEquals(expectedMonthAboveAverege, actualMonthAboveAverege);
+    }
 }
